@@ -9,6 +9,12 @@ import java.util.Scanner;
 public class P8_3 {
 
 	public static void main(String[] args) {
+		
+		if (args[0].indexOf(".txt") == -1 && args[1].indexOf(".txt") == -1) {
+			System.exit(1);
+		}
+		
+		
 			String fileData = readFile(args[0]);
 			writeFile(fileData, args[1]);
 			
