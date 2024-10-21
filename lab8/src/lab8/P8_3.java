@@ -10,7 +10,7 @@ public class P8_3 {
 
 	public static void main(String[] args) {
 
-		if (args[0].indexOf(".txt") == -1 && args[1].indexOf(".txt") == -1) {
+		if (args[0].indexOf(".txt") == -1 || args[1].indexOf(".txt") == -1) {
 			System.exit(1);
 		}
 
