@@ -18,8 +18,11 @@ public class P8_3 {
 		} else if (args.length == 0) {
 			Scanner s = new Scanner(System.in);
 
-			System.out.printf("Ange filnamnet på filen som ska avläsas: ", "%n");
+			System.out.printf("Ange filnamnet som programmet ska läsa från: ", "%n");
 			inFile = s.nextLine();
+			
+			System.out.print("Ange filnamnet som programmet ska skriva till: ");
+			outFile = s.nextLine();
 			s.close();
 		} else {
 			System.exit(1);
