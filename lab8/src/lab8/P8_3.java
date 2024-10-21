@@ -9,14 +9,24 @@ import java.util.Scanner;
 public class P8_3 {
 
 	public static void main(String[] args) {
+		String inFile = "";
+		String outFile = "";
 
-		if (args[0].indexOf(".txt") == -1 || args[1].indexOf(".txt") == -1) {
+		if (args.length == 2) {
+			inFile = args[0];
+			outFile = args[1];
+		} else if (args.length == 0) {
+			Scanner s = new Scanner(System.in);
+
+			System.out.printf("Ange filnamnet på filen som ska avläsas: ", "%n");
+			inFile = s.nextLine();
+			s.close();
+		} else {
 			System.exit(1);
 		}
-
-
-		String fileData = readFile(args[0]);
-		writeFile(fileData, args[1]);
+		
+		String fileData = readFile(inFile);
+		writeFile(fileData, outFile);
 
 		System.exit(0);
 	}
