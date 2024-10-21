@@ -56,7 +56,8 @@ public class P8_1 {
 			Scanner helloScan = new Scanner(helloNew);
 
 			while (helloScan.hasNextLine()) {
-				String helloData = helloScan.nextLine();
+				String helloData = "";
+				helloData += helloScan.nextLine();
 				System.out.println("Data from " + helloNew.toString() + ": " + helloData);
 			}
 
