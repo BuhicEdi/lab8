@@ -3,6 +3,12 @@ package lab8;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+/**
+ * Detta program tar emot en fil och beräknar sedan antalet rader, ord och tecken.
+ * 
+ * @author Edi Buhic
+ * @version 2024-10-25
+ */
 
 public class P8_5 {
 
@@ -20,7 +26,6 @@ public class P8_5 {
 
 			while (fileScanner.hasNextLine()) {
 				String currentLine = fileScanner.nextLine();
-				System.out.println(currentLine);
 				lines++;
 				chars += currentLine.length();
 

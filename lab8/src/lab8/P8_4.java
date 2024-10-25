@@ -3,9 +3,15 @@ package lab8;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
+/**
+ * Detta program tar emot en textfil innehållandes två kolumner av flyttal och beräknar samt returnar sedan medelvärdet.
+ * 
+ * @author Edi Buhic
+ * @version 2024-10-25
+ */
 public class P8_4 {
 
+	// Mainmetod som testar programmet
 	public static void main(String[] args) {
 		Scanner fileScan = new Scanner(System.in);
 		
@@ -29,15 +35,20 @@ public class P8_4 {
 		}
 	}
 
+	// Metod som beräknar medelvärdet
 	public static double[] getAvgCols(Scanner reader) {
+		
+		// Attribut som lagrar flyttalen samt antalet tal per kolumn
 		double[] cols = new double[2];
 		int[] colCount = new int[2];
 		
+		// Läser in nästa rad ända tills filens slut
 		while (reader.hasNextLine()) {
 			String line = reader.nextLine();
 			Scanner scan = new Scanner(line);
 			int index = 0;
 			
+			// Adderar in talet i en array samt ökar antalet tal
 			while (scan.hasNextDouble()) {
 				cols[index] += scan.nextDouble();
 				colCount[index]++;
@@ -46,9 +57,11 @@ public class P8_4 {
 			scan.close();
 		}
 		
+		// Beräknar medelvärdet med hjälp utav våra attribut
 		cols[0] = (cols[0] / colCount[0]);
 		cols[1] = (cols[1] / colCount[1]);
 		
+		// Returnerar arrayen med medelvärden
 		return cols;
 	}
 	
