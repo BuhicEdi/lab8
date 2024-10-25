@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class P8_5 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		Scanner fileScan = new Scanner(System.in);
 		int lines = 0, words = 0, chars = 0;
 
@@ -20,7 +20,6 @@ public class P8_5 {
 		String fileName = fileScan.next();
 		fileScan.close();
 
-		try {
 			File fileImport = new File(fileName);
 			Scanner fileScanner = new Scanner(fileImport);
 
@@ -43,8 +42,5 @@ public class P8_5 {
 			System.out.println("Antalet tecken var: " + chars);
 
 			System.exit(0);
-		} catch (FileNotFoundException err) {
-			err.printStackTrace();
-		}
 	}
 }
