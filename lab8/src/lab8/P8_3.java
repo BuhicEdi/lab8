@@ -26,7 +26,7 @@ public class P8_3 {
 		} else if (args.length == 0) {
 			Scanner s = new Scanner(System.in);
 
-			System.out.printf("Ange filnamnet som programmet ska läsa från: ", "%n");
+			System.out.print("Ange filnamnet som programmet ska läsa från: ");
 			inFile = s.nextLine();
 
 			System.out.print("Ange filnamnet som programmet ska skriva till: ");
@@ -38,7 +38,10 @@ public class P8_3 {
 
 		// Kör metoder för inläsning samt kopiering
 		String fileData = readFile(inFile);
-		writeFile(fileData, outFile);
+		int rowCounter = writeFile(fileData, outFile);
+		
+		// Matar ut nya filens namn samt antal rader som skrivits över till användaren
+		System.out.println("Kopierade " + rowCounter + " rader till " + outFile + ".");
 
 		System.exit(0);
 	}
@@ -54,7 +57,7 @@ public class P8_3 {
 		try {
 			Scanner s = new Scanner(openFile);
 
-			while (s.hasNext()) {
+			while (s.hasNextLine()) {
 				fileData += s.nextLine() + "\n";
 			}
 			s.close();
@@ -67,7 +70,7 @@ public class P8_3 {
 	}
 
 	// Metod som tar emot fildata samt namnet på nya filen
-	public static void writeFile(String data, String newFileName) {
+	public static int writeFile(String data, String newFileName) {
 
 		// Skapar nya filen samt initierar en ny variabel för radhantering
 		File newFile = new File(newFileName);
@@ -78,7 +81,7 @@ public class P8_3 {
 		try {
 			FileWriter fileWrite = new FileWriter(newFile);
 
-			while (s.hasNext()) {
+			while (s.hasNextLine()) {
 				fileWrite.write("/* " + rowCount + " */ " + s.nextLine() + "\n");
 				rowCount++;
 			}
@@ -88,11 +91,7 @@ public class P8_3 {
 		} catch (IOException err) {
 			System.exit(1);
 		}
-
-		// Matar ut nya filens namn samt antal rader som skrivits över till användaren
-		System.out.println("Kopierade " + (rowCount - 1) + " rader till " + newFileName + ".");
+		return (rowCount - 1);
 		
-		// Avslutar programmet
-		System.exit(0);
 	}
 }
