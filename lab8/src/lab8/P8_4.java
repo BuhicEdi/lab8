@@ -7,8 +7,14 @@ import java.util.Scanner;
 public class P8_4 {
 
 	public static void main(String[] args) {
+		Scanner fileScan = new Scanner(System.in);
+		
+		System.out.printf("Mata in ett filnamn: ", "%n");
+		String fileName = fileScan.next();
+		fileScan.close();
+
 		try {
-			File textFile = new File("ettfilnamn");
+			File textFile = new File(fileName);
 			Scanner scan = new Scanner(textFile);
 			
 			double[] columnAvg = getAvgCols(scan);
