@@ -1,7 +1,7 @@
 package lab8;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class P8_4 {
@@ -10,13 +10,17 @@ public class P8_4 {
 		try {
 			File textFile = new File("ettfilnamn");
 			Scanner scan = new Scanner(textFile);
+			
 			double[] columnAvg = getAvgCols(scan);
 			scan.close();
-		} catch (FileNotFoundException err) {
+			
+			System.out.println("Medelvärdet för kolumn 1: " + columnAvg[0]);
+			System.out.println("Medelvärdet för kolumn 2: " + columnAvg[1]);
+			
+			System.exit(0);
+		} catch (IOException err) {
 			System.exit(1);
 		}
-		
-		System.exit(0);
 	}
 
 	public static double[] getAvgCols(Scanner reader) {

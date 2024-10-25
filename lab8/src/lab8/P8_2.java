@@ -1,7 +1,6 @@
 package lab8;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -32,7 +31,7 @@ public class P8_2 {
 				fileData += s.nextLine() + "\n";
 			}
 			s.close();
-		} catch (FileNotFoundException err) {
+		} catch (IOException err) {
 			System.exit(1);
 		}
 
@@ -54,7 +53,7 @@ public class P8_2 {
 
 			s.close();
 			fileWrite.close();
-		} catch (IOException e) {
+		} catch (IOException err) {
 			System.exit(1);
 		}
 
