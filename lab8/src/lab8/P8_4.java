@@ -8,7 +8,7 @@ public class P8_4 {
 
 	public static void main(String[] args) {
 		try {
-			File textFile = new File("col.txt");
+			File textFile = new File("ettfilnamn");
 			Scanner scan = new Scanner(textFile);
 			double[] columnAvg = getAvgCols(scan);
 			scan.close();
@@ -17,7 +17,6 @@ public class P8_4 {
 		}
 		
 		System.exit(0);
-
 	}
 
 	public static double[] getAvgCols(Scanner reader) {
@@ -35,11 +34,10 @@ public class P8_4 {
 				index++;
 			}
 			scan.close();
-			index = 0;
 		}
 		
 		cols[0] = (cols[0] / colCount[0]);
-		cols[1] = (cols[0] / colCount[1]);
+		cols[1] = (cols[1] / colCount[1]);
 		
 		return cols;
 	}
