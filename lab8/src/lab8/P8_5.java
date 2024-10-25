@@ -15,20 +15,20 @@ public class P8_5 {
 
 		try {
 			File fileImport = new File(fileName);
-			getFileStats(fileImport);
-			
+			Scanner fileScanner = new Scanner(fileImport);
+			getFileStats(fileScanner);
+
 			System.exit(0);
 		} catch (FileNotFoundException err) {
 			err.printStackTrace();
 		}
 	}
 
-	public static void getFileStats(File file) throws FileNotFoundException {
-		Scanner lineScan = new Scanner(file);
+	private static void getFileStats(Scanner fileScanner) throws FileNotFoundException {
 		int lines = 0, words = 0, chars = 0;
 
-		while (lineScan.hasNextLine()) {
-			String currentLine = lineScan.nextLine();
+		while (fileScanner.hasNextLine()) {
+			String currentLine = fileScanner.nextLine();
 			System.out.println(currentLine);
 			lines++;
 			chars += currentLine.length();
@@ -40,7 +40,7 @@ public class P8_5 {
 			}
 			wordScan.close();
 		}
-		lineScan.close();
+		fileScanner.close();
 
 		System.out.println("Antalet rader var: " + lines);
 		System.out.println("Antalet ord var: " + words);
