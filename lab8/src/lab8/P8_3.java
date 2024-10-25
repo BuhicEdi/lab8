@@ -73,5 +73,4 @@ public class P8_3 {
 
 		System.out.println("Kopierade " + (rowCount - 1) + " rader till " + newFileName + ".");
 	}
-
 }
