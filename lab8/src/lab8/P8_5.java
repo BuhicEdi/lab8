@@ -2,30 +2,27 @@ package lab8;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class P8_5 {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) {
 		Scanner fileScan = new Scanner(System.in);
 
 		System.out.printf("Mata in ett filnamn: ", "%n");
 		String fileName = fileScan.next();
 		fileScan.close();
 
-		File fileImport = new File(fileName);
-
 		try {
+			File fileImport = new File(fileName);
 			getFileStats(fileImport);
 			System.exit(0);
-		} catch (IOException err) {
+		} catch (FileNotFoundException err) {
 			System.exit(1);
 		}
-
 	}
 
-	public static void getFileStats(File file) throws IOException {
+	public static void getFileStats(File file) throws FileNotFoundException {
 
 		Scanner lineScan = new Scanner(file);
 		int lines = 0, words = 0, chars = 0;
