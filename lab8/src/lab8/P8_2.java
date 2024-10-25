@@ -75,5 +75,8 @@ public class P8_2 {
 
 		// Matar ut nya filens namn samt antal rader som skrivits över till användaren
 		System.out.println("Kopierade " + (rowCount - 1) + " rader till " + newFileName + ".");
+		
+		// Avslutar programmet
+		System.exit(0);
 	}
 }
